@@ -30,8 +30,8 @@ class App {
     this.seaHeight = document.body.clientHeight;
 
     // 레티나 디스플레이를 위한 설정
-    this.canvas.width = this.seaWidth * 2;
-    this.canvas.height = this.seaHeight * 2;
+    this.canvas.width   = this.seaWidth * 2;
+    this.canvas.height  = this.seaHeight * 2;
     this.ctx.scale(2, 2);
 
     // #4
@@ -44,11 +44,11 @@ class App {
 
   }
 
-  animate(t) {
-    requestAnimationFrame(this.animate.bind(this));
+  // animate(t) {
+  //   requestAnimationFrame(this.animate.bind(this));
 
-    this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
-    this.ctx.fillStyle = 'red';
-    this.ctx.fillRect(this.seaWidth / 2, this.seaHeight / 2, this.seaWidth / 2 + this.seaHeight / 6, this.seaWidth / 2 + this.seaHeight / 6);
-  }
+  //   this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
+  //   this.ctx.fillStyle = 'red';
+  //   this.ctx.fillRect(this.seaWidth / 2, this.seaHeight / 2, this.seaWidth / 2 + this.seaHeight / 6, this.seaWidth / 2 + this.seaHeight / 6);
+  // }
 }

@@ -13,11 +13,11 @@ export class Wave {
   
   
     // #1
-    this.point  = [];
+    this.points = [];
     this.gap    = Math.ceil(this.seaWidth / (this.total - 2));
 
-    for( let i = 0; i < this.total; i++ ) {
-      this.point[i] = {
+    for(let i = 0; i < this.total; i++) {
+      this.points[i] = {
         x: i * this.gap,
         y: this.getY(this.bottom, this.top),
       };
@@ -29,8 +29,8 @@ export class Wave {
     ctx.fillStyle = this.color;
     ctx.beginPath();
 
-    let cur   = this.point[0];
-    let prev  = cur
+    let cur   = this.points[0];
+    let prev  = cur;
 
     let dots  = [];
 
@@ -40,8 +40,8 @@ export class Wave {
     let prevCx = cur.x;
     let prevCy = cur.y;
 
-    for(let i = 0; i < this.point.length; i++) {
-      cur = this.point[ i ];
+    for(let i = 1; i < this.points.length; i++) {
+      cur = this.points[ i ];
 
       const cx = (prev.x + prev.x) / 2;
       const cy = (prev.y + prev.y) / 2;
@@ -64,13 +64,13 @@ export class Wave {
 
     ctx.lineTo(prev.x, prev.y);
     ctx.lineTo(this.seaWidth, this.seaHeight);
-    ctx.lineTo(this.point[ 0 ].x, this.seaHeight);
+    ctx.lineTo(this.points[0].x, this.seaHeight);
     ctx.fill();
 
     return dots;
   }
 
-  getY( bottom, top ) {
+  getY(bottom, top) {
     // #2
     const min = this.seaHeight * (1 - bottom);
     const max = this.seaHeight * top;
