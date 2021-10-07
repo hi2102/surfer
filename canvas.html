@@ -219,9 +219,9 @@
   // }
 
 
-  // ===========================
+  // // ===========================
 
-  // // 애니메이션 영역
+  // // // 애니메이션 영역을 그리는 방법은 두가지가 있다. 시간함수를 사용해서 그리는 방법
   // var end = Math.PI * 2;      // 원의 끝점 선언
   // var sec = 2;                // 총 그리는 시간 선언
   // var fps = 60;               // Frame per seconds 설정
@@ -230,7 +230,7 @@
   // for ( var i = 0; i < multiply+1; i++ ) { drawSet(i); }; // multiply 만큼 반복해서 그려야 함.
 
   // function drawSet(delay) {
-  //   setTimeout(function() {
+  //   setTimeout(function() { // 명령어를 특정 시간에 시작하고 싶을 때 사용한다.
   //     ctx.clearRect(0, 0, 200, 200);
   //     ctx.beginPath();
   //     ctx.arc(100, 100, 50, 0, end / multiply * delay); // 한번에 그리는 각도는 end 나누기 multiply
@@ -239,36 +239,43 @@
   //   }, delay * 1000 / fps ); // 1처가 1000이므로 1000을 fps로 나누면 그에 맞는 지연시간 설정 가능
   // }
 
+  // // 리퀘스트 애니메이션 프레임 - 브라우저에서 제공하는 내장함수, 재귀함수(=함수가 본인을 호출해서 무한하게 반복된다.)
   // var x = 0;
   // var myAni;
 
-  // function drawReq() {
-  //   ctx.clearRect(200, 200, 400, 400);
-  //   ctx.beginPath();
-  //   ctx.arc(300, 300, 50, 0, end / Math.PI * x, false);
-  //   ctx.stroke();
-  //   x += 1 / 60;
-  //   console.log("Req");
-
-  //   requestAnimationFrame(drawReq);
-  // }
-  // drawReq();
-
-  // // 스탑 추가
-  // function drawReq() {
+  // // 무한 반복하는 애니메이션
+  // function drawReqInfi() {
   //   ctx.clearRect(200, 200, 400, 400);
   //   ctx.beginPath();
   //   ctx.arc(300, 300, 50, 0, Math.PI * x, false);
   //   ctx.stroke();
   //   x += 1 / 60;
-  //   console.log("Req");
+  //   console.log("Infi");
 
-  //   myAni = requestAnimationFrame(drawReq);
-
-  //   if ( x > 4 ) { cancelAnimationFrame(myAni); }
+  //   requestAnimationFrame(drawReqInfi);
   // }
-  // drawReq();
+  // drawReqInfi();
 
+  // // 스탑 
+  // var y = 0;
+  // var myAni2;
+
+  // function drawReqStop() {
+  //   ctx.clearRect(400, 400, 600, 600);
+  //   ctx.beginPath();
+  //   ctx.arc(500, 500, 50, 0, Math.PI * y, false);
+  //   ctx.stroke();
+  //   y += 1 / 60;
+  //   console.log("Stop");
+
+  //   myAni2 = requestAnimationFrame(drawReqStop);
+
+  //   if ( y > 2 ) { cancelAnimationFrame(myAni2); }
+  // }
+  // drawReqStop();
+
+  // 캔버스 애니메이션을 그리기 위한 기초 코드?
+    
 
   </script>
 
