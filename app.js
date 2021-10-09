@@ -10,11 +10,12 @@ class App {
     // #4
     this.waves = [
       new Wave('#0b57a2', 0.2, 6, 0.4, 0.4),
-      // new Wave( '#50d2f9', 0.5, 8, 0.3, 0.3 ),
-      // new Wave( '#4295f2', 1.0, 10, 0.1, 0.6 ),
+      new Wave('#50d2f9', 0.5, 8, 0.3, 0.3 ),
+      new Wave('#4295f2', 1.0, 10, 0.1, 0.6 ),
     ];
 
     window.addEventListener('resize', this.resize.bind(this), false);
+    this.resize();
 
     requestAnimationFrame(this.animate.bind(this));
   }

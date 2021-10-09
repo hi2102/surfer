@@ -1,5 +1,5 @@
 export class Wave {
-  constructor() {
+  constructor(color, speed, total, bottom, top) {
     this.color  = color;
     this.speed  = speed;
     this.total  = total;
@@ -33,6 +33,20 @@ export class Wave {
 
     let dots = [];
 
+    // 애니메이션 효과 적용 부분
+    cur.x += this.speed;
+
+    // #6 애니메이션 적용 부분
+    if(cur.x > -this.gap) {
+      this.points.unshift({
+        x: -(this.gap * 2),
+        y: this.getY(this.bottom, this.top),
+      });
+    } else if (cur.x > this.seaWidth + this.gap) {
+      this.points.splice(-1);
+    }
+    
+
     // #3
     ctx.moveTo(cur.x, cur.y);
 
@@ -41,6 +55,9 @@ export class Wave {
 
     for(let i = 1; i < this.points.length; i++) {
       cur = this.points[i];
+
+      // #5 애니메이션 효과 적용 부분
+      cur.x += this.speed;
 
       const cx = (prev.x + cur.x) / 2;
       const cy = (prev.y + cur.y) / 2;
@@ -68,7 +85,7 @@ export class Wave {
     return dots;
   }
   
-  getY() {
+  getY(bottom, top) {
     // #2
     const min = this.seaHeight * (1 - bottom);
     const max = this.seaHeight * top;
