@@ -1,21 +1,20 @@
 export class Wave {
-  constructor(color, speed, total, bottom, top) {
+  constructor() {
     this.color  = color;
     this.speed  = speed;
     this.total  = total;
     this.bottom = bottom;
     this.top    = top;
   }
-
+  
   resize(seaWidth, seaHeight) {
-    this.seaWidth   = seaWidth;
-    this.seaHeight  = seaHeight;
-  
-  
+    this.seaWidth  = seaWidth;
+    this.seaHeight = seaHeight;
+
     // #1
     this.points = [];
     this.gap    = Math.ceil(this.seaWidth / (this.total - 2));
-
+    
     for(let i = 0; i < this.total; i++) {
       this.points[i] = {
         x: i * this.gap,
@@ -23,16 +22,16 @@ export class Wave {
       };
     }
   }
-
+  
   draw(ctx) {
     // #3
     ctx.fillStyle = this.color;
     ctx.beginPath();
 
-    let cur   = this.points[0];
-    let prev  = cur;
+    let cur  = this.points[0];
+    let prev = cur;
 
-    let dots  = [];
+    let dots = [];
 
     // #3
     ctx.moveTo(cur.x, cur.y);
@@ -41,11 +40,10 @@ export class Wave {
     let prevCy = cur.y;
 
     for(let i = 1; i < this.points.length; i++) {
-      cur = this.points[ i ];
+      cur = this.points[i];
 
-      const cx = (prev.x + prev.x) / 2;
-      const cy = (prev.y + prev.y) / 2;
-
+      const cx = (prev.x + cur.x) / 2;
+      const cy = (prev.y + cur.y) / 2;
       ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
 
       dots.push({
@@ -57,9 +55,9 @@ export class Wave {
         y3: cy,
       });
 
-      prev    = cur;
-      prevCx  = cx;
-      prevCy  = cy;
+      prev   = cur;
+      prevCx = cx;
+      prevCy = cy;
     }
 
     ctx.lineTo(prev.x, prev.y);
@@ -69,8 +67,8 @@ export class Wave {
 
     return dots;
   }
-
-  getY(bottom, top) {
+  
+  getY() {
     // #2
     const min = this.seaHeight * (1 - bottom);
     const max = this.seaHeight * top;
