@@ -44,11 +44,14 @@ class App {
 
   }
 
-  // animate(t) {
-  //   requestAnimationFrame(this.animate.bind(this));
-
-  //   this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
-  //   this.ctx.fillStyle = 'red';
-  //   this.ctx.fillRect(this.seaWidth / 2, this.seaHeight / 2, this.seaWidth / 2 + this.seaHeight / 6, this.seaWidth / 2 + this.seaHeight / 6);
-  // }
+  animate(t) {
+    requestAnimationFrame(this.animate.bind(this));
+    this.ctx.clearRect(0, 0, this.seaWidth, this.seaHeight);
+    // this.ctx.fillStyle = 'red';
+    // this.ctx.fillRect(this.seaWidth / 2, this.seaHeight / 2, this.seaWidth / 2 + this.seaHeight / 6, this.seaWidth / 2 + this.seaHeight / 6);
+    let dots;
+    for ( let i = 0; i < this.waves.length; i++ ) {
+      dots = this.waves[i].draw(this.ctx);
+    }
+  }
 }
