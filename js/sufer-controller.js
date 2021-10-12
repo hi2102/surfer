@@ -1,5 +1,5 @@
 //#9
-import { Surfer } from "./surfer.js"
+import { Surfer } from "../js/surfer.js"
 
 export class SurferController {
   // #7, 변수 선언 및 이미지 로드
@@ -10,7 +10,7 @@ export class SurferController {
       this.loaded();
     };
     
-    this.img.src  = "surfer.png";
+    this.img.src  = "../styles/surfer.png";
     this.items    = [];
     this.cur      = 0; // 시간에 관련된 변수
     this.isLoaded = false; // 이미지 로드 여부 체크 변수
