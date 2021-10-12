@@ -1,16 +1,18 @@
-export class SurferController {
+//#9
+import { Surfer } from "./surfer.js"
 
+export class SurferController {
+  // #7, 변수 선언 및 이미지 로드
   constructor() {
-    this.img = new Image();
+    this.img        = new Image();
+
     this.img.onload = () => {
       this.loaded();
     };
-
-    this.img.src = "surger.png";
-
-    this.items = [];
-
-    this.cur = 0; // 시간에 관련된 변수
+    
+    this.img.src  = "surfer.png";
+    this.items    = [];
+    this.cur      = 0; // 시간에 관련된 변수
     this.isLoaded = false; // 이미지 로드 여부 체크 변수
   }
 
@@ -27,7 +29,7 @@ export class SurferController {
 
   addSurfer() {
     // #9 서퍼 추가
-    this.items.push(new SurferController(this.img, this.seaWidth));
+    this.items.push(new Surfer(this.img, this.seaWidth));
   }
 
   draw(ctx, t, dots) {
@@ -41,10 +43,10 @@ export class SurferController {
       }
 
       // 서퍼가 화면 밖으로 나가면 배열에서 반환하여 메모리 관리
-      for(let i = this.items.length - 1; i >= 0; i++) {
-        const item = this.item[i];
+      for(let i = this.items.length - 1; i >= 0; i--) {
+        const item = this.items[i];
         if (item.x < -item.width) {
-          this.item.splice(i, 1);
+          this.items.splice(i, 1);
         } else {
           item.draw(ctx, t, dots);
         }

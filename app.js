@@ -16,7 +16,7 @@ class App {
     ];
 
     // #11 서퍼 컨트롤러 추가
-    this.surferController = new this.surferController();
+    this.surferController = new SurferController();
 
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
