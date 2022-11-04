@@ -39,4 +39,5 @@
 
 > 참고한 사이트
 - https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+- https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo
 - https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
