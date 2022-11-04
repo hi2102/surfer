@@ -13,9 +13,9 @@
 * 화면 크기에 따라 파고가 변화 함
 
 <p style="display:flex;">
-  <img width="330" height="400" src="https://user-images.githubusercontent.com/71423455/199906089-e6d27bcf-5a77-41d7-a0b1-76e849092229.png" alt="파도 기본 설정">
-  <img width="330" height="400" src="https://user-images.githubusercontent.com/71423455/199906100-aa2028c6-d1ea-4fbd-966d-b863e97bd4bd.png" alt="파고 범위" >
-  <img width="330" height="400" src="https://user-images.githubusercontent.com/71423455/199906111-2bf57f15-5cbf-45eb-9172-4e28cf83139f.png" alt="애니메이션 적용">
+  <img width="300" height="400" src="https://user-images.githubusercontent.com/71423455/199906089-e6d27bcf-5a77-41d7-a0b1-76e849092229.png" alt="파도 기본 설정">
+  <img width="300" height="400" src="https://user-images.githubusercontent.com/71423455/199906100-aa2028c6-d1ea-4fbd-966d-b863e97bd4bd.png" alt="파고 범위" >
+  <img width="300" height="400" src="https://user-images.githubusercontent.com/71423455/199906111-2bf57f15-5cbf-45eb-9172-4e28cf83139f.png" alt="애니메이션 적용">
 <p>
 
 > 서퍼
