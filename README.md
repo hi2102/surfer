@@ -1,8 +1,6 @@
-# surfer 
+# surfer - Canvas API
 
 <img src="https://user-images.githubusercontent.com/71423455/199903776-dd40ae42-388b-46e9-852d-04893184ed83.gif" width="100%"/>
-
-> Canvas API
 
 * Canvas API를 사용해서 2D 컨텍스트를 설정하고 베지어 곡선을 이용해 파도를 생성하고 점을 이어 서퍼 이미지를 띄웠다.
 
