@@ -11,7 +11,7 @@
 <img src="https://user-images.githubusercontent.com/71423455/199905189-953167fb-448d-44c4-a1d8-04edf3686e17.gif" width="100%" height="300"/>
 
 * 기본 파도의 설정 이후 파도의 애니메이션 범위를 지정한 뒤 애니메이션 효과를 적용했다.
-* 파고에 따라 파도가 변화를 주었다.
+* 화면 크기에 따라 파고에 변화를 주었다.
 
 <p style="display:flex;">
   <img width="330" height="400" src="https://user-images.githubusercontent.com/71423455/199906089-e6d27bcf-5a77-41d7-a0b1-76e849092229.png" alt="파도 기본 설정">
