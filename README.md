@@ -2,14 +2,15 @@
 
 <img src="https://user-images.githubusercontent.com/71423455/199903776-dd40ae42-388b-46e9-852d-04893184ed83.gif" width="100%"/>
 
-* Canvas API를 사용해서 2D 컨텍스트를 설정하고 베지어 곡선을 이용해 파도를 생성하고 점을 이어 서퍼 이미지를 띄웠다.
+* Canvas API를 사용해서 2D 컨텍스트를 설정
+* 베지어 곡선을 이용해 파도를 생성하고 점을 이어 서퍼 이미지 생성
 
 > 파도
 
 <img src="https://user-images.githubusercontent.com/71423455/199905189-953167fb-448d-44c4-a1d8-04edf3686e17.gif" width="100%" height="300"/>
 
-* 기본 파도의 설정 이후 파도의 애니메이션 범위를 지정한 뒤 애니메이션 효과를 적용했다.
-* 화면 크기에 따라 파고에 변화를 주었다.
+* 기본 파도의 설정 이후 파도의 애니메이션 범위를 지정 후 애니메이션 효과를 적용
+* 화면 크기에 따라 파고가 변화 함
 
 <p style="display:flex;">
   <img width="330" height="400" src="https://user-images.githubusercontent.com/71423455/199906089-e6d27bcf-5a77-41d7-a0b1-76e849092229.png" alt="파도 기본 설정">
@@ -38,6 +39,8 @@
 </p>
 
 > 참고한 사이트
-- https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
-- https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo
-- https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+- 캔버스 API → https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API 
+- 파고와 삼각함수의 연관성 → https://m.blog.naver.com/kordipr/221385458185
+- 다음 리페인트를 위한 애니메이션을 업데이트 → https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+- 베지어 곡선 → https://developer.mozilla.org/en-US/docs/Glossary/Bezier_curve
+- 베지어 곡선을 이용한 파도 구현 ( quadratic Bézier curve ) → https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo
